@@ -11,14 +11,14 @@ public class StockSpanProblem {
 
 	public static void main(String agrs[]) {
 		Stack<Integer> stackData = new Stack<Integer>();
-		int[] a = { 10, 4, 5, 90, 120, 80  };
+		int[] data = { 10, 4, 5, 90, 120, 80  };
 
-		int[] nextGreaterIndex = new int[a.length];
+		int[] nextGreaterIndex = new int[data.length];
 
-		for (int i = 0; i <= a.length - 1; i++) {
+		for (int i = 0; i <= data.length - 1; i++) {
 
 			while (!stackData.isEmpty()) {
-				if (a[stackData.lastElement()] > a[i]) {
+				if (data[stackData.lastElement()] > data[i]) {
 					nextGreaterIndex[i] = stackData.lastElement();
 					stackData.push(i);
 					break;
@@ -34,7 +34,7 @@ public class StockSpanProblem {
 
 		}
 
-		for (int i = 0; i < a.length; i++) {
+		for (int i = 0; i < data.length; i++) {
 			System.out.print(i - nextGreaterIndex[i]+" ");
 		}
 
