@@ -12,7 +12,8 @@ public class MinStackWithExtraSpace {
 	public static void main(String args[]) {
 		
 		MinStackWithExtraSpace.stackExtend s = new MinStackWithExtraSpace.stackExtend();
-		
+		s.getMin();
+		s.pop();
 		s.push(3); 
         s.push(5); 
         s.getMin(); 
@@ -22,6 +23,7 @@ public class MinStackWithExtraSpace {
         s.pop(); 
         s.getMin(); 
         s.pop();
+        s.peek();
 		
 	}
 	
@@ -42,6 +44,11 @@ public class MinStackWithExtraSpace {
 		}
 		
 		public void pop() {
+			if(s.empty()) {
+				System.out.println("stack is empty");
+				return;
+			}
+			
 			if(s.lastElement() == ss.lastElement()) {
 				ss.pop();
 			}
@@ -49,7 +56,19 @@ public class MinStackWithExtraSpace {
 		}
 		
 		public void getMin() {
+			if(s.isEmpty()) {
+				System.out.println("No Min Element as stack is empty");
+				return;
+			}
 			System.out.println("Min Number in the stack is "+ss.lastElement());
+		}
+		
+		public void peek() {
+			if(s.isEmpty()) {
+				System.out.println("No Element as stack is empty");
+				return;
+			}
+			System.out.println("Min Number in the stack is "+s.peek());
 		}
 	}
 
