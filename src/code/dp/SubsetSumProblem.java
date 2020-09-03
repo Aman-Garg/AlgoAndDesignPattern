@@ -6,8 +6,8 @@ public class SubsetSumProblem {
 
 	
 		
-		int arr[] = new int[] { 2, 7, 8, 10,1};
-		int sum = 13;
+		int arr[] = new int[] {1,5,11,1};
+		int sum = 9;
 		int n = arr.length;
 		
 		boolean t[][] = new boolean[n + 1][sum + 1];

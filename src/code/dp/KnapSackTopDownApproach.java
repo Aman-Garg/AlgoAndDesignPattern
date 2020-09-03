@@ -4,10 +4,11 @@ public class KnapSackTopDownApproach {
 	
 	public static void main(String args[]) {
 	
-		int wt[] = {10,20,30};
-		int val[] = {60,100,120};
+		int wt[] = {1, 2, 3};
+		int val[] = {10, 15, 40};
+		
 		int n = wt.length;
-		int w = 50;
+		int w = 6;
 		
 		int t[][] = new int[n+1][w+1];
 		for(int i=0; i<n+1; i++) {
@@ -27,7 +28,6 @@ public class KnapSackTopDownApproach {
 				}
 			}
 		}
-		System.out.println(n);
 		System.out.println(t[n][w]);
 		
 	}
