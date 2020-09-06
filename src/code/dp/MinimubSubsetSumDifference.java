@@ -3,7 +3,7 @@ package code.dp;
 public class MinimubSubsetSumDifference {
 	
 	public static void main(String grs[]) {
-		int arr[] = new int[] {10,20,15,5, 25};
+		int arr[] = new int[] {1,1,2,3};
 		int n = arr.length;
 		int sum = 0;
 		
