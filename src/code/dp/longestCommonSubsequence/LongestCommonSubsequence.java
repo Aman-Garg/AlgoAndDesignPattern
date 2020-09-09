@@ -3,23 +3,26 @@ package code.dp.longestCommonSubsequence;
 public class LongestCommonSubsequence {
 
 	public static void main(String agrs[]) {
-		String x = "ABCasdad";
-		String y = "ACdfas";
+		String y = "abcdaf";
+		String x = "acbcf";
 		
-		int subProblem[][] = new int[x.length()+1][y.length()+1];
+		int n = x.length();
+		int m = y.length();
 		
-		for(int i=0 ; i<x.length()+1 ; i++) {
+		int subProblem[][] = new int[n+1][m+1];
+		
+		for(int i=0 ; i<n+1 ; i++) {
 			subProblem[i][0] = 0;
 		}
 		
-		for(int j=0; j<y.length()+1 ; j++) {
+		for(int j=0; j<m+1 ; j++) {
 			subProblem[0][j] = 0;
 		}
 		
 		int count = 0;
 		
-		for(int i=1; i<x.length()+1; i++) {
-			for(int j=1; j<y.length()+1 ; j++) {
+		for(int i=1; i<n+1; i++) {
+			for(int j=1; j<m+1 ; j++) {
 				if(x.charAt(i-1) == y.charAt(j-1)) {
 					subProblem[i][j] = 1 + subProblem[i-1][j-1];
 				}else {
@@ -28,8 +31,33 @@ public class LongestCommonSubsequence {
 			}
 		}
 		
-		System.out.println(subProblem[x.length()][y.length()]);
+		System.out.println(subProblem[n][m]);
+		
+		
+		/**
+		 * Adding another approach for the PrintingLongestConmmonSubsequence 
+		 */
+		
+		char subseq[] = new char[subProblem[n][m]];
+		int subseqIndex = subProblem[n][m]-1;
+		
+		int i = n;
+		int j = m;
+		
+		while(j>0 && i>0) {
+			if(x.charAt(i-1) == y.charAt(j-1)) {
+				subseq[subseqIndex] = x.charAt(i-1);
+				subseqIndex--;
+				i--;
+				j--;
+			}else if(subProblem[i-1][j] > subProblem[i][j-1]) {
+				 i = i-1;
+			}else {
+				j = j-1;
+			}
+		}
 
+		System.out.println(new String(subseq));
 
 //		System.out.println(lcs(x,y,x.length(),y.length()));
 
