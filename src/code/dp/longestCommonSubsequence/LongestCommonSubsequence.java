@@ -3,8 +3,8 @@ package code.dp.longestCommonSubsequence;
 public class LongestCommonSubsequence {
 
 	public static void main(String agrs[]) {
-		String x = "cccc";
-		String y = "cccc";
+		String x = "ABCasdad";
+		String y = "ACdfas";
 		
 		int subProblem[][] = new int[x.length()+1][y.length()+1];
 		
