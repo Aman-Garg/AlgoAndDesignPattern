@@ -35,9 +35,9 @@ public class LinkedListNode {
 		while(ptr.getNext() != null) {
 			ptr = ptr.getNext();
 		}
+		System.out.println("check");
 		LinkedListNode ctr = new LinkedListNode(number);
 		ptr.next = ctr;
 	}
-
 
 }
